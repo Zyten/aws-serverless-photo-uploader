@@ -1,3 +1,9 @@
+Zyten:
+
+Use Serverless Dashboard instead of directly using AWS credentials. See [Deployment section.](#deploying-the-backend)
+`
+<hr/>
+
 # Photo Uploader Project
 
 Please note - this is part of an open source project written by me, Joe Gilmore - you can read the full details of this project here
@@ -31,11 +37,23 @@ Note about the PREFIX - this is optional, but if like me you have many AWS resou
 
 ## Deploying the backend
 
-Run the following commands to deploy the backend
+### Connect to Serverless Dashboard
+
+Run the following commands to deploy the backend using Serverless Dashboard
 
 ```bash
-sls deploy
+serverless login
 ```
+
+- Go through the Serverless Dashboard onboarding to create an org and add the AWS Provider
+
+### Deploy using Serverless Dashboard
+
+```bash
+serverless --verbose
+```
+- Provide org and application when prompted then select deploy now
+- Keep the CLI tab open and open new tab for prepping the frontend
 
 Once your service has deployed, you need to copy the USER_POOL_ID, USER_POOL_CLIENT_ID and API Endpoint values. You will need these for the frontend.
 

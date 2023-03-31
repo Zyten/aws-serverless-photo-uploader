@@ -1,9 +1,11 @@
+org: ${env:SLS_DASHBOARD_ORG}
+app: ${env:SLS_DASHBOARD_APP}
 
 custom:
   bundle: 
     linting: false
   REGION: ${env:REGION}
-  IAM_PROFILE: ${env:YOUR_AWS_IAM_PROFILE}
+  #IAM_PROFILE: ${env:YOUR_AWS_IAM_PROFILE}
   SERVICE_NAME: ${env:PREFIX}${env:SERVICE_NAME}
   DYNAMO_DB_TABLE: ${env:PREFIX}${env:DYNAMO_DB_TABLE}
   COGNITO_POOL: ${env:PREFIX}${env:COGNITO_POOL}
@@ -21,7 +23,7 @@ provider:
   stage: dev
   name: aws
   region: ${self:custom.REGION}
-  profile: ${self:custom.IAM_PROFILE}
+  #profile: ${self:custom.IAM_PROFILE}
   runtime: nodejs12.x
   # Exposed Env variables
   environment:
